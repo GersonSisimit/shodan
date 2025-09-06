@@ -22,35 +22,11 @@ Este repositorio contiene un script de **Python** que usa la **API de Shodan** p
 
 ## 2) Preparar el entorno
 
-```bash
-# Crear entorno (opcional pero recomendado)
-python -m venv .venv
-# Activar
-# Windows:
-.venv\Scripts\activate
-# macOS / Linux:
-# source .venv/bin/activate
-
 # Instalar dependencias
 pip install --upgrade pip
 pip install shodan
 ```
 
----
-
-## 3) Guardar la API Key (opción A: variable de entorno)
-
-```bash
-# Windows (PowerShell)
-setx SHODAN_API_KEY "TU_API_KEY_AQUI"
-
-# macOS / Linux (bash/zsh; sólo para la sesión actual)
-export SHODAN_API_KEY="TU_API_KEY_AQUI"
-```
-
-O bien, **opción B**: pasarla por parámetro `--api-key` al ejecutar.
-
----
 
 ## 4) Ejecutar el script
 
@@ -102,31 +78,3 @@ python shodan_gt_scan.py --query 'city:"Chimaltenango" port:80' \
    - Tabla “Puerto → IPs únicas”.
 
 ---
-
-## 6) Subir a GitHub
-
-1. Crea un repositorio nuevo en tu cuenta (p. ej. `tarea4-shodan-guatemala`).  
-2. En la carpeta del proyecto, ejecuta:
-   ```bash
-   git init
-   git add shodan_gt_scan.py README.md
-   git commit -m "Tarea 4 - Shodan Guatemala: script y guía"
-   git branch -M main
-   git remote add origin https://github.com/<tu-usuario>/tarea4-shodan-guatemala.git
-   git push -u origin main
-   ```
-3. Copia la **URL del repositorio** y pégala en tu plataforma de entrega.
-
----
-
-## 7) Consejos de evaluación
-- No uses `org:` en tus queries (el script lo bloquea).
-- Incluye tus datos reales en los parámetros para que salgan en la salida.
-- Si necesitas más resultados, sube `--pages` gradualmente y usa `--delay` para respetar el rate limit.
-- Las consultas de ejemplo del curso (p. ej. `city:"Jalapa"`, puertos comunes) son válidas siempre que apunten a **Guatemala**.
-- Cualquier similitud significativa con otro repositorio puede penalizarse (según las reglas de la tarea).
-
----
-
-## 8) Licencia
-Uso académico.
